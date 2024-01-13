@@ -1,4 +1,6 @@
+import ExpenseForm from "./components/Expenses/ExpenseForm";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
+import './components/Expenses/ExpenseItem.css';
 
 function App() {
   const expenses = [
@@ -24,7 +26,8 @@ function App() {
   ];
 
   return (
-    <div>
+    <div className="expenses">
+    <ExpenseForm></ExpenseForm>
       <h2>
         {" "}
         {expenses.map((expense) => (

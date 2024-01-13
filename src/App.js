@@ -1,9 +1,10 @@
+import { useState } from "react";
 import ExpenseForm from "./components/Expenses/ExpenseForm";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
-import './components/Expenses/ExpenseItem.css';
+import "./components/Expenses/ExpenseItem.css";
 
 function App() {
-  const expenses = [
+  const [expenses, setExpenses] = useState( [
     {
       id: "e1",
       title: "Toilet Paper",
@@ -23,11 +24,19 @@ function App() {
       amount: 450,
       date: new Date(2021, 5, 12),
     },
-  ];
+  ]);
+
+  const saveExpenseDataHandler = (enteredExpenseData) => {
+    const updatedExpenses = [
+      ...expenses,
+      { ...enteredExpenseData, id: Math.random().toString() },
+    ];
+    setExpenses(updatedExpenses);
+  };
 
   return (
     <div className="expenses">
-    <ExpenseForm></ExpenseForm>
+      <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
       <h2>
         {" "}
         {expenses.map((expense) => (

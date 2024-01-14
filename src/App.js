@@ -2,9 +2,16 @@ import { useState } from "react";
 import ExpenseForm from "./components/Expenses/ExpenseForm";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import "./components/Expenses/ExpenseItem.css";
+import ExpensesFilter from "./components/Expenses/ExpensesFilter";
 
 function App() {
-  const [expenses, setExpenses] = useState( [
+  const [filteredYear, setFilteredYear] = useState("2020");
+
+  const filterChangeHandler = (selectedYear) => {
+    setFilteredYear(selectedYear);
+  };
+
+  const [expenses, setExpenses] = useState([
     {
       id: "e1",
       title: "Toilet Paper",
@@ -34,12 +41,20 @@ function App() {
     setExpenses(updatedExpenses);
   };
 
+  const filteredExpenses = expenses.filter((expense) => {
+    return expense.date.getFullYear().toString() === filteredYear;
+  });
+
   return (
     <div className="expenses">
       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
+      <ExpensesFilter
+        selected={filteredYear}
+        onChangeFilter={filterChangeHandler}
+      />
       <h2>
         {" "}
-        {expenses.map((expense) => (
+        {filteredExpenses.map((expense) => (
           <ExpenseItem
             key={expense.id}
             title={expense.title}

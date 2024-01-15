@@ -4,6 +4,7 @@ import ExpensesFilter from "./ExpensesFilter";
 import ExpensesList from "./ExpensesList";
 import ExpenseData from "./ExpenseData";
 import NewExpense from "./NewExpense";
+import ExpensesChart from "../Chart/ExpensesChart";
 
 
 const Expenses = () => {
@@ -41,6 +42,7 @@ const Expenses = () => {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
+      <ExpensesChart expenses={filteredExpenses} />
       <ExpensesList items={filteredExpenses} />
     </div>
   );

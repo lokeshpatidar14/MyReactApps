@@ -12,7 +12,6 @@ function ExpenseItem(props) {
       </div>
       <ExpenseDetails
         amount={props.amount}
-        location={props.location}
         title={props.title}
       />
     </Card>

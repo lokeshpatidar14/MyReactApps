@@ -3,6 +3,7 @@ import ExpenseForm from "./components/Expenses/ExpenseForm";
 import ExpenseItem from "./components/Expenses/ExpenseItem";
 import "./components/Expenses/ExpenseItem.css";
 import ExpensesFilter from "./components/Expenses/ExpensesFilter";
+import ExpensesList from "./components/Expenses/ExpensesList";
 
 function App() {
   const [filteredYear, setFilteredYear] = useState("2020");
@@ -45,6 +46,7 @@ function App() {
     return expense.date.getFullYear().toString() === filteredYear;
   });
 
+ 
   return (
     <div className="expenses">
       <ExpenseForm onSaveExpenseData={saveExpenseDataHandler} />
@@ -52,17 +54,7 @@ function App() {
         selected={filteredYear}
         onChangeFilter={filterChangeHandler}
       />
-      <h2>
-        {" "}
-        {filteredExpenses.map((expense) => (
-          <ExpenseItem
-            key={expense.id}
-            title={expense.title}
-            amount={expense.amount}
-            date={expense.date}
-          />
-        ))}
-      </h2>
+      <ExpensesList items={filteredExpenses} />
     </div>
   );
 }

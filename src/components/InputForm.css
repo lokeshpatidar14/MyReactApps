@@ -8,8 +8,13 @@ form {
   display: flex;
   flex-direction: column;
   max-width: 300px;
-  margin-bottom: 20px;
   margin: 0 auto;
+}
+
+.label-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
 }
 
 label {
@@ -45,8 +50,42 @@ button {
 button:hover {
   background-color: #d45a97;
 }
-.label-input {
+
+/* Custom Modal Styles */
+.custom-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   display: flex;
-  flex-direction: column;
-  margin-bottom: 16px;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.modal-content p {
+  margin-bottom: 15px;
+}
+
+/* Close button */
+.modal-content button {
+  background-color: #007bff;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.modal-content button:hover {
+  background-color: #0056b3;
 }

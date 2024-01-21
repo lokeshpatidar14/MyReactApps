@@ -1,6 +1,6 @@
 // UserList.js
 
-import React from 'react';
+import React from "react";
 import "./UserList.css";
 
 function UserList({ users }) {
@@ -8,8 +8,8 @@ function UserList({ users }) {
     <div>
       <ul>
         {users.map((user, index) => (
-          <li className='containerList' key={index}>
-            {user.name}, {user.age} years old
+          <li className="containerList" key={index}>
+            {user.name}, {user.age} years old , College: {user.college};
           </li>
         ))}
       </ul>

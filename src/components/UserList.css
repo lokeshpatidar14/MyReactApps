@@ -1,0 +1,25 @@
+/* UserList.css */
+
+ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 8px;
+    text-align: center;
+    background-color: aquamarine;
+  }
+  
+  .container {
+    border-radius: 10px;
+    background-color: lavender; 
+    padding: 20px;
+    padding-top: 100px;
+    margin: auto;
+    max-width: 800px;
+  }
+  .containerList {
+    box-sizing: content-box;
+    font-size: x-large;
+  }

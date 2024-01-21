@@ -1,0 +1,52 @@
+.centered-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  margin-bottom: 20px;
+  margin: 0 auto;
+}
+
+label {
+  margin-bottom: 8px;
+  color: #333;
+  font-weight: bold;
+}
+
+input {
+  padding: 10px;
+  margin-bottom: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 14px;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+button {
+  background-color: #ff69b4;
+  color: #fff;
+  padding: 10px;
+  cursor: pointer;
+  width: 100px;
+  border: none;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #d45a97;
+}
+.label-input {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 16px;
+}
